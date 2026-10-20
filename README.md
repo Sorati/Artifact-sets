@@ -2,6 +2,12 @@
 
 **Artifact-sets** — модуль для Foundry Virtual Tabletop, предназначенный для реализации механик и автоматизации игрового процесса.
 
+## Установка
+
+В Foundry VTT 14 открой **Модули** → **Установить модуль** и вставь эту ссылку в поле **Ссылка манифеста**.
+
+> https://github.com/Sorati/Artifact-sets/releases/latest/download/module.json
+
 ## Основные возможности
 
 ### Наборы артефактов
