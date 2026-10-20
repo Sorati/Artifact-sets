@@ -1,0 +1,21 @@
+{
+  "id": "artifact-sets",
+  "title": "Artifact-sets",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "14",
+    "verified": "14"
+  },
+  "esmodules": [
+    "scripts/artifact-sets.js"
+  ],
+  "styles": [
+    {
+    "src": "styles/artifact-sets.css"
+    }
+  ],
+  "flags": {
+    "canUpload": true
+  },
+  "description": ""
+}

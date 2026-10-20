@@ -1,0 +1,448 @@
+/* =========================================================
+   НАСТРОЙКИ НАБОРА АРТЕФАКТОВ
+   ========================================================= */
+
+.artifact-sets-fields {
+    margin-top: 0.6rem;
+    padding: 0 0 0.8rem;
+}
+
+.artifact-sets-fields[hidden] {
+    display: none !important;
+}
+
+.artifact-sets-fields > label {
+    display: none;
+}
+
+.artifact-sets-fields > .form-fields {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================================================
+   ОБЛАСТЬ ПЕРЕТАСКИВАНИЯ АРТЕФАКТОВ
+   ========================================================= */
+
+.artifact-sets-drop-zone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 52px;
+    padding: 0.75rem 1rem;
+
+    border: 2px dashed var(--color-border-light-2, #777);
+    border-radius: 6px;
+
+    color: var(--color-text-secondary, #aaa);
+    background: rgba(0, 0, 0, 0.18);
+
+    text-align: center;
+    font-size: 0.85rem;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        color 0.15s ease;
+}
+
+.artifact-sets-drop-zone > i {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.artifact-sets-drop-zone.drag-over {
+    border-color: var(--color-border-highlight, #c6a15b);
+    color: var(--color-text-primary, #eee);
+    background: rgba(198, 161, 91, 0.12);
+}
+
+
+/* =========================================================
+   КОНТЕЙНЕР СПИСКА АРТЕФАКТОВ
+   ========================================================= */
+
+.artifact-sets-container {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+
+    margin-top: 0.65rem;
+    margin-bottom: 0.25rem;
+    padding: 0;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК СПИСКА
+   ========================================================= */
+
+.artifact-sets-header {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+
+    margin: 0;
+    padding: 0.4rem 0.6rem;
+
+    border: 1px solid #54252c;
+    border-radius: 4px 4px 0 0;
+
+    color: var(--color-text-primary, #eee);
+    background: #54252c;
+
+    font-family: var(--font-primary, serif);
+    font-size: 0.85rem;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   СПИСОК АРТЕФАКТОВ
+   ========================================================= */
+
+.artifact-sets-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
+    box-sizing: border-box;
+    width: 100%;
+
+    margin: 0;
+    padding: 3px;
+
+    border: 1px solid #434857;
+    border-top: 0;
+    border-radius: 0 0 4px 4px;
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   РЕЖИМ ПРОСМОТРА — РЕДАКТИРОВАНИЕ ВЫКЛЮЧЕНО
+   ========================================================= */
+
+/* Сохраняем расположение контейнера. */
+.artifact-sets-container.is-viewing {
+    margin-top: 0.65rem;
+    margin-bottom: 0.25rem;
+}
+
+/* По умолчанию заголовок остаётся видимым. */
+.artifact-sets-container.is-viewing .artifact-sets-header {
+    display: block;
+}
+
+/*
+ * ПУСТОЙ СПИСОК В РЕЖИМЕ ПРОСМОТРА
+ *
+ * Убираем заголовок, рамку, фон и внутренние отступы
+ * списка. Остаётся только сообщение о пустом списке.
+ */
+.artifact-sets-container.is-viewing:has(.artifact-sets-empty)
+.artifact-sets-header {
+    display: none !important;
+}
+
+.artifact-sets-container.is-viewing:has(.artifact-sets-empty)
+.artifact-sets-list {
+    display: block;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+    box-shadow: none;
+}
+
+/* В режиме просмотра скрываем кнопку удаления. */
+.artifact-sets-container.is-viewing .artifact-sets-remove {
+    display: none !important;
+}
+
+/* В режиме просмотра скрываем ручку перестановки. */
+.artifact-sets-container.is-viewing .artifact-sets-reorder {
+    display: none !important;
+}
+
+/* Оформление строк артефактов в режиме просмотра. */
+.artifact-sets-container.is-viewing .artifact-sets-entry {
+    min-height: 40px;
+    padding: 0.3rem 0.4rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.035);
+    border-radius: 3px;
+
+    background: #292b32;
+}
+
+.artifact-sets-container.is-viewing .artifact-sets-entry:hover {
+    background: #33353d;
+}
+
+
+/* =========================================================
+   СТРОКА АРТЕФАКТА
+   ========================================================= */
+
+.artifact-sets-entry {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 40px;
+
+    margin: 0;
+    padding: 0.3rem 0.4rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.035);
+    border-radius: 3px;
+
+    background: #292b32;
+
+    transition: background-color 0.15s ease;
+}
+
+.artifact-sets-entry:hover {
+    background: #33353d;
+}
+
+
+/* =========================================================
+   ОБЛАСТЬ С ИКОНКОЙ И НАЗВАНИЕМ
+   ========================================================= */
+
+.artifact-sets-link-area {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    min-width: 0;
+    gap: 0.5rem;
+}
+
+
+/* =========================================================
+   ИКОНКА АРТЕФАКТА
+   ========================================================= */
+
+.artifact-sets-icon {
+    display: block;
+    flex: 0 0 34px;
+
+    width: 34px;
+    height: 34px;
+
+    box-sizing: border-box;
+    margin: 0;
+
+    border: 1px solid rgba(210, 195, 143, 0.5);
+    border-radius: 4px;
+
+    object-fit: cover;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   НАЗВАНИЕ И ССЫЛКА НА АРТЕФАКТ
+   ========================================================= */
+
+.artifact-sets-link {
+    min-width: 0;
+
+    overflow-wrap: anywhere;
+
+    font-size: 0.82rem;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+/* Ссылки Foundry на предметы. */
+.artifact-sets-link a.content-link,
+.artifact-sets-link a.entity-link {
+    display: inline;
+
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+
+    color: var(--color-text-primary, #d4d4d4);
+    background: transparent;
+
+    font-size: inherit;
+    font-weight: normal;
+    line-height: inherit;
+
+    white-space: normal;
+    overflow-wrap: anywhere;
+
+    text-decoration: none;
+}
+
+.artifact-sets-link a.content-link:hover,
+.artifact-sets-link a.entity-link:hover {
+    color: var(--color-text-hyperlink, #e0c78b);
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   КНОПКА УДАЛЕНИЯ
+   ========================================================= */
+
+.artifact-sets-remove {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 26px;
+
+    width: 26px;
+    height: 26px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 3px;
+
+    color: #8c8d96;
+    background: transparent;
+
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.artifact-sets-remove > i {
+    font-size: 0.85rem;
+}
+
+.artifact-sets-remove:hover {
+    color: #e9a0a0;
+    background: rgba(160, 45, 45, 0.2);
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   КНОПКА ИЗМЕНЕНИЯ ПОРЯДКА
+   ========================================================= */
+
+.artifact-sets-reorder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 26px;
+
+    width: 26px;
+    height: 26px;
+
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    border-radius: 3px;
+
+    color: #8c8d96;
+    background: transparent;
+
+    box-shadow: none;
+    cursor: grab;
+}
+
+.artifact-sets-reorder > i {
+    font-size: 0.85rem;
+}
+
+.artifact-sets-reorder:hover {
+    color: var(--color-text-primary, #eee);
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: none;
+}
+
+.artifact-sets-reorder:active {
+    cursor: grabbing;
+}
+
+
+/* =========================================================
+   СОСТОЯНИЯ ПЕРЕТАСКИВАНИЯ
+   ========================================================= */
+
+.artifact-sets-entry.dragging {
+    opacity: 0.45;
+}
+
+.artifact-sets-entry.drag-target {
+    border-color: var(--color-border-highlight, #c6a15b);
+    background: rgba(198, 161, 91, 0.12);
+}
+
+
+/* =========================================================
+   СООБЩЕНИЕ О ПУСТОМ СПИСКЕ
+   ========================================================= */
+
+.artifact-sets-empty {
+    box-sizing: border-box;
+    width: 100%;
+
+    padding: 0.75rem 0.25rem 0.35rem;
+
+    color: var(--color-text-secondary, #aaa);
+
+    text-align: center;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   АДАПТАЦИЯ ДЛЯ УЗКИХ ОКОН
+   ========================================================= */
+
+@media (max-width: 550px) {
+    .artifact-sets-entry {
+        gap: 0.3rem;
+        padding: 0.25rem 0.3rem;
+    }
+
+    .artifact-sets-link-area {
+        gap: 0.35rem;
+    }
+
+    .artifact-sets-icon {
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .artifact-sets-link {
+        font-size: 0.78rem;
+    }
+
+    .artifact-sets-remove,
+    .artifact-sets-reorder {
+        flex-basis: 24px;
+        width: 24px;
+        height: 24px;
+    }
+}
