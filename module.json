@@ -27,6 +27,6 @@
   ],
   "url": "https://github.com/Sorati/Artifact-sets",
   "manifest": "https://github.com/Sorati/Artifact-sets/releases/latest/download/module.json",
-  "download": "https://github.com/Sorati/Artifact-sets/releases/download/v1.0.0/module.zip",
+  "download": "https://github.com/Sorati/Artifact-sets/releases/download/v1.0.0/artifact-sets.zip",
   "description": "A Foundry VTT module for managing artifact sets in D&D 5e."
 }
